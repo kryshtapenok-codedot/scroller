@@ -3,10 +3,101 @@
     padding: 0;
     box-sizing: border-box;
     --newtransitionY: 0%;
-    --newtransitionX:-110%;
+    --newtransitionX:-625%;
 }
 
 
+.block-item{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100px;
+    height: 100px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: burlywood;
+    margin: 3px;
+    transition: 0.5s;
+}
+.scroller {
+    background-color: blueviolet;
+    height: 2000px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+
+}
+
+.block-conteiner {
+    position: absolute;;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    z-index: 4;
+    top:-160px;
+    transform: rotateX(52deg) rotateZ(45deg) translateX(var(--newtransitionX)) translateY(var(--newtransitionY));
+}
+
+
+
+
+.block-conteiner p {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    bottom: 10px;
+    z-index: -1;
+    letter-spacing: 0.06em;
+    left: 20%;
+}
+
+img {
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+img:hover {
+    transform: translate3d(-61px, -71px, 0px);
+}
+
+.block-item::after {
+
+    background-color: black;
+    content: "";
+    position: absolute;
+    right: -25px;
+    top: 20px;
+    filter: blur(8px);
+    opacity: 0.5;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:1920px){
 .scroller {
     background-color: blueviolet;
     height: 2000px;
@@ -77,4 +168,5 @@ img:hover {
     width: 225px;
     height: 225px;
     z-index: -1;
+}
 }
